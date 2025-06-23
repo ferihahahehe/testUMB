@@ -197,21 +197,17 @@ class _HomePageWidgetState extends State<HomePageWidget>
                   if (FFAppState().isBluetoothEnabled)
                     Expanded(
                       child: Text(
-                        'Enable your device bluetooth to scan for nearby devices.',
+                        'Enable the Smart Vest to connect via Bluetooth.',
                         style: FlutterFlowTheme.of(context).bodyLarge.override(
                               font: GoogleFonts.roboto(
-                                fontWeight: FlutterFlowTheme.of(context)
-                                    .bodyLarge
-                                    .fontWeight,
+                                fontWeight: FontWeight.w600,
                                 fontStyle: FlutterFlowTheme.of(context)
                                     .bodyLarge
                                     .fontStyle,
                               ),
                               color: FlutterFlowTheme.of(context).secondaryText,
                               letterSpacing: 0.0,
-                              fontWeight: FlutterFlowTheme.of(context)
-                                  .bodyLarge
-                                  .fontWeight,
+                              fontWeight: FontWeight.w600,
                               fontStyle: FlutterFlowTheme.of(context)
                                   .bodyLarge
                                   .fontStyle,
@@ -301,7 +297,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                       .roboto(
                                                                     fontWeight:
                                                                         FontWeight
-                                                                            .w500,
+                                                                            .w600,
                                                                     fontStyle: FlutterFlowTheme.of(
                                                                             context)
                                                                         .bodyLarge
@@ -311,7 +307,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                       0.0,
                                                                   fontWeight:
                                                                       FontWeight
-                                                                          .w500,
+                                                                          .w600,
                                                                   fontStyle: FlutterFlowTheme.of(
                                                                           context)
                                                                       .bodyLarge
@@ -584,7 +580,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                         .roboto(
                                                                   fontWeight:
                                                                       FontWeight
-                                                                          .w500,
+                                                                          .w600,
                                                                   fontStyle: FlutterFlowTheme.of(
                                                                           context)
                                                                       .bodyLarge
@@ -594,7 +590,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                     0.0,
                                                                 fontWeight:
                                                                     FontWeight
-                                                                        .w500,
+                                                                        .w600,
                                                                 fontStyle: FlutterFlowTheme.of(
                                                                         context)
                                                                     .bodyLarge

@@ -86,14 +86,6 @@ class FFAppState extends ChangeNotifier {
           _globalActivityDurations;
     });
     _safeInit(() {
-      _currentFlexAngle =
-          prefs.getInt('ff_currentFlexAngle') ?? _currentFlexAngle;
-    });
-    _safeInit(() {
-      _currentCondition =
-          prefs.getBool('ff_currentCondition') ?? _currentCondition;
-    });
-    _safeInit(() {
       _historicalSummaries = prefs
               .getStringList('ff_historicalSummaries')
               ?.map((x) {
@@ -112,10 +104,6 @@ class FFAppState extends ChangeNotifier {
     _safeInit(() {
       _lastProcessingDate =
           prefs.getString('ff_lastProcessingDate') ?? _lastProcessingDate;
-    });
-    _safeInit(() {
-      _currentActivityName =
-          prefs.getString('ff_currentActivityName') ?? _currentActivityName;
     });
   }
 
@@ -365,14 +353,12 @@ class FFAppState extends ChangeNotifier {
   int get currentFlexAngle => _currentFlexAngle;
   set currentFlexAngle(int value) {
     _currentFlexAngle = value;
-    prefs.setInt('ff_currentFlexAngle', value);
   }
 
   bool _currentCondition = false;
   bool get currentCondition => _currentCondition;
   set currentCondition(bool value) {
     _currentCondition = value;
-    prefs.setBool('ff_currentCondition', value);
   }
 
   List<DailyActivitySummaryStruct> _historicalSummaries = [];
@@ -429,7 +415,6 @@ class FFAppState extends ChangeNotifier {
   String get currentActivityName => _currentActivityName;
   set currentActivityName(String value) {
     _currentActivityName = value;
-    prefs.setString('ff_currentActivityName', value);
   }
 }
 

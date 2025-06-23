@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -257,15 +258,21 @@ class _MyJourneyWidgetState extends State<MyJourneyWidget> {
                                         child: FlutterFlowBarChart(
                                           barData: [
                                             FFBarChartData(
-                                              yData:
-                                                  _model.journeyData!.idleGood,
+                                              yData: functions
+                                                  .convertHoursListToMinutes(
+                                                      _model
+                                                          .journeyData?.idleGood
+                                                          ?.toList()),
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .success,
                                             ),
                                             FFBarChartData(
-                                              yData:
-                                                  _model.journeyData!.idleBad,
+                                              yData: functions
+                                                  .convertHoursListToMinutes(
+                                                      _model
+                                                          .journeyData?.idleBad
+                                                          ?.toList()),
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .error,
@@ -276,18 +283,23 @@ class _MyJourneyWidgetState extends State<MyJourneyWidget> {
                                           barWidth: 16.0,
                                           barBorderRadius:
                                               BorderRadius.circular(8.0),
-                                          barSpace: 0.0,
+                                          barSpace: 5.0,
                                           groupSpace: 8.0,
                                           alignment:
                                               BarChartAlignment.spaceAround,
                                           chartStylingInfo: ChartStylingInfo(
+                                            enableTooltip: true,
+                                            tooltipBackgroundColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .alternate,
                                             backgroundColor:
                                                 FlutterFlowTheme.of(context)
                                                     .primaryBackground,
+                                            showGrid: true,
                                             showBorder: false,
                                           ),
                                           axisBounds: AxisBounds(
-                                            maxY: 2.0,
+                                            maxY: 120.0,
                                           ),
                                           xAxisLabelInfo: AxisLabelInfo(
                                             showLabels: true,
@@ -339,7 +351,7 @@ class _MyJourneyWidgetState extends State<MyJourneyWidget> {
                                                           .labelSmall
                                                           .fontStyle,
                                                 ),
-                                            labelInterval: 1.0,
+                                            labelInterval: 10.0,
                                             labelFormatter: LabelFormatter(
                                               numberFormat: (val) =>
                                                   formatNumber(
@@ -349,7 +361,7 @@ class _MyJourneyWidgetState extends State<MyJourneyWidget> {
                                                     DecimalType.periodDecimal,
                                               ),
                                             ),
-                                            reservedSize: 20.0,
+                                            reservedSize: 25.0,
                                           ),
                                         ),
                                       ),
@@ -517,15 +529,21 @@ class _MyJourneyWidgetState extends State<MyJourneyWidget> {
                                         child: FlutterFlowBarChart(
                                           barData: [
                                             FFBarChartData(
-                                              yData: _model
-                                                  .journeyData!.walkingGood,
+                                              yData: functions
+                                                  .convertHoursListToMinutes(
+                                                      _model.journeyData
+                                                          ?.walkingGood
+                                                          ?.toList()),
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .success,
                                             ),
                                             FFBarChartData(
-                                              yData: _model
-                                                  .journeyData!.walkingBad,
+                                              yData: functions
+                                                  .convertHoursListToMinutes(
+                                                      _model.journeyData
+                                                          ?.walkingBad
+                                                          ?.toList()),
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .error,
@@ -536,18 +554,23 @@ class _MyJourneyWidgetState extends State<MyJourneyWidget> {
                                           barWidth: 16.0,
                                           barBorderRadius:
                                               BorderRadius.circular(8.0),
-                                          barSpace: 0.0,
+                                          barSpace: 5.0,
                                           groupSpace: 8.0,
                                           alignment:
                                               BarChartAlignment.spaceAround,
                                           chartStylingInfo: ChartStylingInfo(
+                                            enableTooltip: true,
+                                            tooltipBackgroundColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .alternate,
                                             backgroundColor:
                                                 FlutterFlowTheme.of(context)
                                                     .primaryBackground,
+                                            showGrid: true,
                                             showBorder: false,
                                           ),
                                           axisBounds: AxisBounds(
-                                            maxY: 2.0,
+                                            maxY: 120.0,
                                           ),
                                           xAxisLabelInfo: AxisLabelInfo(
                                             showLabels: true,
@@ -599,7 +622,7 @@ class _MyJourneyWidgetState extends State<MyJourneyWidget> {
                                                           .labelSmall
                                                           .fontStyle,
                                                 ),
-                                            labelInterval: 1.0,
+                                            labelInterval: 10.0,
                                             labelFormatter: LabelFormatter(
                                               numberFormat: (val) =>
                                                   formatNumber(
@@ -609,7 +632,7 @@ class _MyJourneyWidgetState extends State<MyJourneyWidget> {
                                                     DecimalType.periodDecimal,
                                               ),
                                             ),
-                                            reservedSize: 20.0,
+                                            reservedSize: 25.0,
                                           ),
                                         ),
                                       ),
@@ -777,15 +800,21 @@ class _MyJourneyWidgetState extends State<MyJourneyWidget> {
                                         child: FlutterFlowBarChart(
                                           barData: [
                                             FFBarChartData(
-                                              yData: _model
-                                                  .journeyData!.runningGood,
+                                              yData: functions
+                                                  .convertHoursListToMinutes(
+                                                      _model.journeyData
+                                                          ?.runningGood
+                                                          ?.toList()),
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .success,
                                             ),
                                             FFBarChartData(
-                                              yData: _model
-                                                  .journeyData!.runningBad,
+                                              yData: functions
+                                                  .convertHoursListToMinutes(
+                                                      _model.journeyData
+                                                          ?.runningBad
+                                                          ?.toList()),
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .error,
@@ -796,18 +825,20 @@ class _MyJourneyWidgetState extends State<MyJourneyWidget> {
                                           barWidth: 16.0,
                                           barBorderRadius:
                                               BorderRadius.circular(8.0),
-                                          barSpace: 0.0,
+                                          barSpace: 5.0,
                                           groupSpace: 8.0,
                                           alignment:
                                               BarChartAlignment.spaceAround,
                                           chartStylingInfo: ChartStylingInfo(
+                                            enableTooltip: true,
                                             backgroundColor:
                                                 FlutterFlowTheme.of(context)
                                                     .primaryBackground,
+                                            showGrid: true,
                                             showBorder: false,
                                           ),
                                           axisBounds: AxisBounds(
-                                            maxY: 2.0,
+                                            maxY: 120.0,
                                           ),
                                           xAxisLabelInfo: AxisLabelInfo(
                                             showLabels: true,
@@ -859,7 +890,7 @@ class _MyJourneyWidgetState extends State<MyJourneyWidget> {
                                                           .labelSmall
                                                           .fontStyle,
                                                 ),
-                                            labelInterval: 1.0,
+                                            labelInterval: 10.0,
                                             labelFormatter: LabelFormatter(
                                               numberFormat: (val) =>
                                                   formatNumber(
@@ -1037,15 +1068,21 @@ class _MyJourneyWidgetState extends State<MyJourneyWidget> {
                                         child: FlutterFlowBarChart(
                                           barData: [
                                             FFBarChartData(
-                                              yData: _model
-                                                  .journeyData!.stairsUpGood,
+                                              yData: functions
+                                                  .convertHoursListToMinutes(
+                                                      _model.journeyData
+                                                          ?.stairsUpGood
+                                                          ?.toList()),
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .success,
                                             ),
                                             FFBarChartData(
-                                              yData: _model
-                                                  .journeyData!.stairsUpBad,
+                                              yData: functions
+                                                  .convertHoursListToMinutes(
+                                                      _model.journeyData
+                                                          ?.stairsUpBad
+                                                          ?.toList()),
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .error,
@@ -1056,18 +1093,23 @@ class _MyJourneyWidgetState extends State<MyJourneyWidget> {
                                           barWidth: 16.0,
                                           barBorderRadius:
                                               BorderRadius.circular(8.0),
-                                          barSpace: 0.0,
+                                          barSpace: 5.0,
                                           groupSpace: 8.0,
                                           alignment:
                                               BarChartAlignment.spaceAround,
                                           chartStylingInfo: ChartStylingInfo(
+                                            enableTooltip: true,
+                                            tooltipBackgroundColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .alternate,
                                             backgroundColor:
                                                 FlutterFlowTheme.of(context)
                                                     .primaryBackground,
+                                            showGrid: true,
                                             showBorder: false,
                                           ),
                                           axisBounds: AxisBounds(
-                                            maxY: 2.0,
+                                            maxY: 120.0,
                                           ),
                                           xAxisLabelInfo: AxisLabelInfo(
                                             showLabels: true,
@@ -1119,7 +1161,7 @@ class _MyJourneyWidgetState extends State<MyJourneyWidget> {
                                                           .labelSmall
                                                           .fontStyle,
                                                 ),
-                                            labelInterval: 1.0,
+                                            labelInterval: 10.0,
                                             labelFormatter: LabelFormatter(
                                               numberFormat: (val) =>
                                                   formatNumber(
@@ -1129,7 +1171,7 @@ class _MyJourneyWidgetState extends State<MyJourneyWidget> {
                                                     DecimalType.periodDecimal,
                                               ),
                                             ),
-                                            reservedSize: 20.0,
+                                            reservedSize: 25.0,
                                           ),
                                         ),
                                       ),
@@ -1297,15 +1339,21 @@ class _MyJourneyWidgetState extends State<MyJourneyWidget> {
                                         child: FlutterFlowBarChart(
                                           barData: [
                                             FFBarChartData(
-                                              yData: _model
-                                                  .journeyData!.stairsDownGood,
+                                              yData: functions
+                                                  .convertHoursListToMinutes(
+                                                      _model.journeyData
+                                                          ?.stairsDownGood
+                                                          ?.toList()),
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .success,
                                             ),
                                             FFBarChartData(
-                                              yData: _model
-                                                  .journeyData!.stairsDownBad,
+                                              yData: functions
+                                                  .convertHoursListToMinutes(
+                                                      _model.journeyData
+                                                          ?.stairsDownBad
+                                                          ?.toList()),
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .error,
@@ -1316,18 +1364,23 @@ class _MyJourneyWidgetState extends State<MyJourneyWidget> {
                                           barWidth: 16.0,
                                           barBorderRadius:
                                               BorderRadius.circular(8.0),
-                                          barSpace: 0.0,
+                                          barSpace: 5.0,
                                           groupSpace: 8.0,
                                           alignment:
                                               BarChartAlignment.spaceAround,
                                           chartStylingInfo: ChartStylingInfo(
+                                            enableTooltip: true,
+                                            tooltipBackgroundColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .alternate,
                                             backgroundColor:
                                                 FlutterFlowTheme.of(context)
                                                     .primaryBackground,
+                                            showGrid: true,
                                             showBorder: false,
                                           ),
                                           axisBounds: AxisBounds(
-                                            maxY: 2.0,
+                                            maxY: 120.0,
                                           ),
                                           xAxisLabelInfo: AxisLabelInfo(
                                             showLabels: true,
@@ -1379,7 +1432,7 @@ class _MyJourneyWidgetState extends State<MyJourneyWidget> {
                                                           .labelSmall
                                                           .fontStyle,
                                                 ),
-                                            labelInterval: 1.0,
+                                            labelInterval: 10.0,
                                             labelFormatter: LabelFormatter(
                                               numberFormat: (val) =>
                                                   formatNumber(
@@ -1389,7 +1442,7 @@ class _MyJourneyWidgetState extends State<MyJourneyWidget> {
                                                     DecimalType.periodDecimal,
                                               ),
                                             ),
-                                            reservedSize: 20.0,
+                                            reservedSize: 25.0,
                                           ),
                                         ),
                                       ),
@@ -1503,7 +1556,7 @@ class _MyJourneyWidgetState extends State<MyJourneyWidget> {
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Text(
-                                  'weeklyTotal (Last 7 Days)',
+                                  'Weekly Total (Last 7 Days)',
                                   style: FlutterFlowTheme.of(context)
                                       .bodyLarge
                                       .override(
@@ -1572,7 +1625,7 @@ class _MyJourneyWidgetState extends State<MyJourneyWidget> {
                                           donutHoleRadius: 40.0,
                                           donutHoleColor: Colors.transparent,
                                           sectionLabelType:
-                                              PieChartSectionLabelType.value,
+                                              PieChartSectionLabelType.percent,
                                           sectionLabelStyle: FlutterFlowTheme
                                                   .of(context)
                                               .headlineSmall

@@ -7,6 +7,7 @@ import '/widgets/current_activity/current_activity_widget.dart';
 import '/widgets/current_posture/current_posture_widget.dart';
 import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'dashboard_widget.dart' show DashboardWidget;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';

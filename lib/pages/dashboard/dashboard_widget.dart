@@ -7,6 +7,7 @@ import '/widgets/current_activity/current_activity_widget.dart';
 import '/widgets/current_posture/current_posture_widget.dart';
 import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -268,19 +269,25 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                           child: FlutterFlowBarChart(
                                             barData: [
                                               FFBarChartData(
-                                                yData: FFAppState()
-                                                    .globalActivityDurations
-                                                    .map((e) => e.goodDuration)
-                                                    .toList(),
+                                                yData: functions
+                                                    .convertHoursListToMinutes(
+                                                        FFAppState()
+                                                            .globalActivityDurations
+                                                            .map((e) =>
+                                                                e.goodDuration)
+                                                            .toList()),
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .success,
                                               ),
                                               FFBarChartData(
-                                                yData: FFAppState()
-                                                    .globalActivityDurations
-                                                    .map((e) => e.badDuration)
-                                                    .toList(),
+                                                yData: functions
+                                                    .convertHoursListToMinutes(
+                                                        FFAppState()
+                                                            .globalActivityDurations
+                                                            .map((e) =>
+                                                                e.badDuration)
+                                                            .toList()),
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .error,
@@ -293,18 +300,23 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                             barWidth: 16.0,
                                             barBorderRadius:
                                                 BorderRadius.circular(8.0),
-                                            barSpace: 0.0,
+                                            barSpace: 5.0,
                                             groupSpace: 8.0,
                                             alignment:
                                                 BarChartAlignment.spaceAround,
                                             chartStylingInfo: ChartStylingInfo(
+                                              enableTooltip: true,
+                                              tooltipBackgroundColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .alternate,
                                               backgroundColor:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryBackground,
+                                              showGrid: true,
                                               showBorder: false,
                                             ),
                                             axisBounds: AxisBounds(
-                                              maxY: 2.0,
+                                              maxY: 120.0,
                                             ),
                                             xAxisLabelInfo: AxisLabelInfo(
                                               showLabels: true,
@@ -360,7 +372,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                                             .labelSmall
                                                             .fontStyle,
                                                   ),
-                                              labelInterval: 1.0,
+                                              labelInterval: 10.0,
                                               labelFormatter: LabelFormatter(
                                                 numberFormat: (val) =>
                                                     formatNumber(
@@ -371,7 +383,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                                       DecimalType.periodDecimal,
                                                 ),
                                               ),
-                                              reservedSize: 20.0,
+                                              reservedSize: 25.0,
                                             ),
                                           ),
                                         ),
